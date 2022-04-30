@@ -18,7 +18,7 @@ def index():
 def detail(idx):
     return render_template('index.html')
 
-# 12?
+# 12? 브랜치 테스트
 
 @app.route('/post', methods=['POST'])
 def save_post():
