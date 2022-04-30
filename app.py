@@ -18,7 +18,7 @@ def index():
 def detail(idx):
     return render_template('index.html')
 
-
+# 12?
 
 @app.route('/post', methods=['POST'])
 def save_post():
