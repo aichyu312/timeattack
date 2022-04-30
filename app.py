@@ -18,7 +18,7 @@ def index():
 def detail(idx):
     return render_template('index.html')
 
-# 12?
+# 12? 메인에 바로넣기
 
 @app.route('/post', methods=['POST'])
 def save_post():
