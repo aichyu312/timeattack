@@ -54,7 +54,7 @@ def create_article():
 # Read
 @app.route('/article', methods=['GET'])
 def read_article():
-    article = 0 #todo
+    article = list(db.mymemo.find({},{'_id': False}))
     return jsonify({"article": article})
 
 # Update
