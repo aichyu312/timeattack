@@ -5,5 +5,5 @@ public class GateWay {
 }
 
 public void send() {
-    
+
 }
