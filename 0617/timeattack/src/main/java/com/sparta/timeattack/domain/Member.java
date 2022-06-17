@@ -28,9 +28,6 @@ public class Member extends Timestamped {
     @Column(nullable = false)
     public int gender;
 
-    public String getMemberEmail() {
-        return email;
-    }
 
     public Member(String name,String email,int age, int gender) {
         this.name = name;

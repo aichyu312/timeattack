@@ -3,17 +3,14 @@ package com.sparta.timeattack.controller;
 import com.sparta.timeattack.domain.Member;
 import com.sparta.timeattack.domain.MemberRepository;
 import com.sparta.timeattack.domain.MemberRequestDto;
-import com.sparta.timeattack.security.JwtTokenProvider;
 import com.sparta.timeattack.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 
-//final 인 필드값을 파라미터로 받는 생성자 생성
+//final인 필드값을 파라미터로 받는 생성자 생성
 @RequiredArgsConstructor
 //각종 mapping 을 위해 선언
 @RestController
@@ -21,10 +18,8 @@ import java.util.Optional;
 
 public class MemberController {
 
-
     private final MemberRepository memberRepository;
     private final MemberService memberService;
-    private final JwtTokenProvider jwtTokenProvider;
 
     @PostMapping("/create")
     public Member postMember(@RequestBody Member requestDto) {
@@ -51,12 +46,6 @@ public class MemberController {
     @GetMapping("recommend/{id}")
     public List<Member> recommendMember(@PathVariable Long id) {
         return memberService.recommendMember(id);
-    }
 
-    @PostMapping("/login")
-    public String login(@RequestBody Map<String, String> user){
-        Optional<Member> member = memberRepository.findByEmail(user.get("email"));
-        return jwtTokenProvider.createToken(member.get().getMemberEmail(),
     }
-
 }
